@@ -3,4 +3,15 @@
 
 #Here is the records:
 
+#CHAPTER 2: Arrays
+#Listing 2.1
 
+
+#CHAPTER 2: Arrays
+#Listing 2.2
+
+#CHAPTER 2: Matrix
+#Listing 2.3
+
+#CHAPTER 3: Sets and Maps
+#Listing 3.1
