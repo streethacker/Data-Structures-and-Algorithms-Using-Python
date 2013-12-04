@@ -25,7 +25,7 @@ class _BagIterator:
 			try:
 				#Get the next item from the bag.If there are no more
 				#items, the StopIteration exception is raised.
-				item = iterator.__next__()
+				item = iterator.next()
 
 				#Perform the body of the for loop
 				print item
@@ -43,7 +43,7 @@ class _BagIterator:
 	def __iter__(self):
 		return self
 
-	def __next__(self):
+	def next(self):
 		if self._curItems < len(self._bagItems):
 				item = self._bagItems[self._curItems]
 				self._curItems += 1

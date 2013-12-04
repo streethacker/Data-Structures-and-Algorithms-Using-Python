@@ -14,7 +14,7 @@ class _ArrayIterator:
 	To use Python's traversal mechanism with our own 
 	abstract data types, we must define an iterator 
 	class, which is a class in Python containing two
-	special methods, __iter__ and __next__. Iterator
+	special methods, __iter__() and next(). Iterator
 	classes are commonly defined in the same module
 	as the corresponding container class.
 	"""
@@ -37,7 +37,7 @@ class _ArrayIterator:
 		reference to the current item indicated by the 
 		loop variable. The loop variable is the incremen
 		-ted by one to prepare it for the next invocation
-		of the __next__ method. If there are no additional
+		of the next() method. If there are no additional
 		items, the method must raise a StopIteration excep
 		-tion that flags the for loop to terminate.
 		"""
