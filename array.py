@@ -1,3 +1,12 @@
+__author__ = "streethacker"
+
+#/usr/bin/python
+#-*-coding:utf-8-*-
+
+#Data Structures and Algorithms Using Python
+#CHAPTER 2: Arrays
+#Listing 2.1: array.py
+
 import ctypes
 
 class _ArrayIterator:
