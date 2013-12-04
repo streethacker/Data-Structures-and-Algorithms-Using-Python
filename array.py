@@ -32,7 +32,7 @@ class _ArrayIterator:
 
 	def next(self):
 		"""
-		The __next__ method is called to return the next
+		The next() method is called to return the next
 		item in the container. The method first saves a 
 		reference to the current item indicated by the 
 		loop variable. The loop variable is the incremen
