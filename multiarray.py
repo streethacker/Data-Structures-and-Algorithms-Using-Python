@@ -1,4 +1,4 @@
-__author__ == "streethacker"
+__author__ = "streethacker"
 
 #/usr/bin/python
 #-*- coding:utf-8 -*-
