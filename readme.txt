@@ -18,3 +18,6 @@ Here is the records:
 
 	CHAPTER 3: Sets and Maps
 	Listing 3.1: linearset.py
+
+	CHAPTER 3: Sets and Maps
+	Listing 3.3: multiarray.py

@@ -1,3 +1,12 @@
+__author__ == "streethacker"
+
+#/usr/bin/python
+#-*- coding:utf-8 -*-
+
+#Data Structures and Algorithms Using Python
+#CHAPTER 3: Sets and Maps
+#Listing 3.3
+
 from array import Array
 
 class MultiArray:
