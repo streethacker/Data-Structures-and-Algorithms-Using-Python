@@ -21,3 +21,6 @@ Here is the records:
 
 	CHAPTER 3: Sets and Maps
 	Listing 3.3: multiarray.py
+
+	CHAPTER 5: Searching and Sorting
+	Listing 5.4: binsearch.py
