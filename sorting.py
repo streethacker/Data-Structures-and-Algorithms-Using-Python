@@ -1,3 +1,13 @@
+__author__ = "streethacker"
+
+#/usr/bin/python
+#-*- coding:utf-8 -*-
+
+#Data Structures and Algorithms Using Python
+#Chapter 5: Searching and Sorting
+#Listing 5.5/5.6/5.7
+
+
 def simpleBubbleSort(theRef):
 	"""
 	Sorts a sequence in ascending order using the simple bubble
@@ -32,7 +42,7 @@ def advancedBubbleSort(theRef):
 	when no swaps are performed by the if statement within the inner l
 	-oop. At that point, the function can return immediately without c
 	-ompleting the remaining iterations. O(n) in the best case.
-	"""
+	"""	
 	max = len(theRef) - 1
 
 	swapFlg = False
