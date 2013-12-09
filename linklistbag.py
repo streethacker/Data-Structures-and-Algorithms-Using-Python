@@ -1,3 +1,12 @@
+__author__ = "__streethacker"
+
+#/usr/bin/python
+#-*- coding:utf-8 -*-
+
+#Data Structures and Algorithms Using Python
+#CHAPTER 6: Linked Structures
+#Listing 6.5: linklistbag.py
+
 class _BagIterator:
 	def __init__(self, theHead):
 		self._curNode = theHead

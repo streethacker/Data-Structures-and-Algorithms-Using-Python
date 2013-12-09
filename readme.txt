@@ -27,3 +27,6 @@ Here is the records:
 
 	CHAPTER 5: Searching and Sorting
 	Listing 5.10: binaryset.py
+
+	CHAPTER 6: Linked Structures
+	Listing 6.5: linklistbag.py
