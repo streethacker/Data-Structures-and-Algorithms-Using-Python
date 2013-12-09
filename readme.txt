@@ -24,3 +24,6 @@ Here is the records:
 
 	CHAPTER 5: Searching and Sorting
 	Listing 5.4: binsearch.py
+
+	CHAPTER 5: Searching and Sorting
+	Listing 5.10: binaryset.py
