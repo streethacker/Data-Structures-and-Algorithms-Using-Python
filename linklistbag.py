@@ -102,3 +102,16 @@ class Bag:
 		
 		return curNode.data
 
+	#	try:
+	#			if curNode is self._head:
+	#					self._head = curNode.next
+	#			else:
+	#					preNode.next = curNode.next
+	#			return curNode.data
+	#	except AttributeError, e:
+	#			print "The item must be in the bag."
+	#			print e
+	#	else:
+	#			self._size -= 1
+	#			return curNode.data
+
