@@ -30,3 +30,6 @@ Here is the records:
 
 	CHAPTER 6: Linked Structures
 	Listing 6.5: linklistbag.py
+
+	CHAPTER 6: Linked Structures
+	Listing 6.5: sorted_linklistbag.py

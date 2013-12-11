@@ -1,4 +1,4 @@
-__author__ = "__streethacker"
+__author__ = "streethacker"
 
 #/usr/bin/python
 #-*- coding:utf-8 -*-
@@ -115,3 +115,24 @@ class Bag:
 	#			self._size -= 1
 	#			return curNode.data
 
+	
+	def printBagElements(self):
+		for b in self:
+				print b
+
+
+if __name__ == "__main__":
+		bag = Bag()
+
+		bag.add(10)
+		bag.add(12)
+		bag.add(36)
+		bag.add(77)
+
+		bag.printBagElements()
+
+		bag.remove(12)
+
+		print 
+
+		bag.printBagElements()
