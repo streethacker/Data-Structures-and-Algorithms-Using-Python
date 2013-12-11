@@ -22,6 +22,9 @@ Here is the records:
 	CHAPTER 3: Sets and Maps
 	Listing 3.3: multiarray.py
 
+	CHAPTER 4: Algorithm Analysis
+	Listing 4.2/4.3: sparsematrix.py
+
 	CHAPTER 5: Searching and Sorting
 	Listing 5.4: binsearch.py
 
