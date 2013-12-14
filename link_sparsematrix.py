@@ -1,6 +1,21 @@
+__author__ = "streethacker"
+
+#/usr/bin/python
+#-*- coding:utf-8 -*-
+
+#Data Structures and Algorithms Using Python
+#CHAPTER 6: Linked Structures
+#Listing 6.11: link_sparsematrix.py
+
 from array import Array
 
 class _MatrixElementNode:
+	"""
+	The non-zero elements for a  given row will be stored in the corresponding linked
+	list sorted by column index.The row index is not needed since it corresponds to a
+	specific linked list within the array of linked lists.
+	"""
+
 	def __init__(self, col, value):
 		self.col = col
 		self.value = value
