@@ -162,7 +162,7 @@ class SparseMatrix:
 
 	def __mul__(self, rhsMatrix):
 		assert self.numCols() == rhsMatrix.numRows(),\
-			"Matrix sizes not compatible for the add operation."
+			"Matrix sizes not compatible for the multipy operation."
 			
 		newMatrix = SparseMatrix(self.numRows(), rhsMatrix.numCols())
 
