@@ -39,3 +39,6 @@ Here is the records:
 
 	CHAPTER 6: Linked Structures
 	Listing 6.11: link_sparsematrix.py
+
+	CHAPTER 6: Linked Structures
+	Listing 6.14: polynomial.py
