@@ -42,3 +42,6 @@ Here is the records:
 
 	CHAPTER 6: Linked Structures
 	Listing 6.14: polynomial.py
+
+	CHAPTER 7: Stacks
+	Listing 7.1: pyliststack.py
