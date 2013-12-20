@@ -8,6 +8,11 @@ __author__ = "streethacker"
 #Listing 6.14: polynomial.py
 
 class _PolyTermNode(object):
+	"""
+	The polynomial term node structure, which contains two main fields(actually three):
+	degree: the degree of a single term of the polynomial
+	coefficient: the coefficient of a single term of the polynomial.
+	"""
 	def __init__(self, degree, coefficient):
 		self.degree = degree
 		self.coefficient = coefficient
@@ -121,6 +126,10 @@ class Polynomial:
 		return newPoly
 
 	def __sub__(self, rhsPoly):
+		"""
+		Almost the same as the __add__() method, whearas when the nodeA's degree is smaller than the nodeB's
+		degree, the new coefficient will be the -nodeB.coefficient.
+		"""
 		assert self.degree() >= 0 and rhsPoly.degree() >= 0, \
 			"Substraction only allowed on non-empty polynomials."
 
@@ -135,7 +144,7 @@ class Polynomial:
 						nodeA = nodeA.next
 				elif nodeA.degree < nodeB.degree:
 						degree = nodeB.degree
-						coefficient = nodeB.coefficient
+						coefficient = -nodeB.coefficient  #-nodeB.coefficient
 						nodeB = nodeB.next
 				else:
 						degree = nodeA.degree	#or degree = nodeB.degree
@@ -158,6 +167,10 @@ class Polynomial:
 		return newPoly
 
 	def __mul__(self, rhsPoly):
+		"""
+		Computing the product of two polynomials requires multiplying the second polynomial by each term.This
+		generates a series of intermediate polynomials, which are then be added to create the final product.
+		"""
 		assert self.degree() >= 0 and rhsPoly.degree() >= 0,\
 			"Multiplication only allowed on non-empty polynomials."
 
@@ -173,6 +186,9 @@ class Polynomial:
 		return newPoly
 
 	def _termMultiply(self, termNode):
+		"""
+		Helper method which creates a new polynomial from multiplying an existing polynomial by another term.
+		"""
 		newPoly = Polynomial()
 
 		curr = self._polyHead
@@ -187,6 +203,10 @@ class Polynomial:
 		return newPoly
 
 	def _appendTerm(self, degree, coefficient):
+		"""
+		Helper method which accepts the degree and coefficient of a polynomial term, creates a new node to store the term
+		and appends the node to the end of the list.
+		"""
 		if coefficient != 0.0:
 				newTerm = _PolyTermNode(degree, coefficient)
 				if self._polyHead is None:
@@ -196,6 +216,47 @@ class Polynomial:
 				
 				self._polyTail = newTerm
 
+	def printPoly(self):
+		"""
+		Extra method which is not necessary for the Polynomial ADT.Just using it to show up the result of the operations
+		between two or more polynomials.
+		"""
+		curNode = self._polyHead
+		while curNode is not None:
+				if curNode.next is not None:
+						print "%(coefficient)sx^%(degree)s + " % {"coefficient":curNode.coefficient, \
+							"degree":curNode.degree},  #string format based on the dictionary.
+				else:
+						print "%(coefficient)sx^%(degree)s" % {"coefficient":curNode.coefficient, \
+							"degree":curNode.degree}
+						print
+
+				curNode = curNode.next
+
 
 if __name__ == "__main__":
-		pass
+		leftPoly = Polynomial(2, 5)
+		leftPoly += Polynomial(1, 3)
+		leftPoly += Polynomial(0, -10)
+
+		rightPoly = Polynomial(3, 2)
+		rightPoly += Polynomial(2, 4)
+		rightPoly += Polynomial(0, 3)
+
+		addPoly = leftPoly + rightPoly
+		subPoly = leftPoly - rightPoly
+		mulPoly = leftPoly * rightPoly
+		evalPoly = leftPoly.evaluate(10)
+
+		print "The addition of the two polynomials is:"
+		addPoly.printPoly()
+
+
+		print "The substraction of the two polynomials is:"
+		subPoly.printPoly()
+		
+		print "The multiplication of the two polynomials is:"
+		mulPoly.printPoly()
+
+		print "The evaluation of the leftPoly is:", evalPoly
+
