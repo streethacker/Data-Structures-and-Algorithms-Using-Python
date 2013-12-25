@@ -1,9 +1,18 @@
+__author__ = "streethacker"
+
+#-*- coding:utf-8 -*-
+#/usr/bin/python
+
+#Data Structures and Algorithms Using Python
+#CHAPTER 7: Stacks
+#Listing 7.2: lliststack.py
+
 class _StackNode(object):
 	def __init__(self, item, link):
 		self.item = item
 		self.next = link
 
-def Stack:
+class Stack:
 	"""
 	The front of the linked list(head) provides the most efficient representation for the top of
 	the stack.Because it's quite easy to prepend nodes to the linked list as well as remove the 

@@ -48,3 +48,6 @@ Here is the records:
 
 	CHAPTER 7: Stacks
 	Listing 7.2: lliststack.py
+
+	CHAPTER 7: Stacks
+	Listing 7.3: validatingCpp.py
