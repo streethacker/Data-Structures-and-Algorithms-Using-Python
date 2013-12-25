@@ -45,3 +45,6 @@ Here is the records:
 
 	CHAPTER 7: Stacks
 	Listing 7.1: pyliststack.py
+
+	CHAPTER 7: Stacks
+	Listing 7.2: lliststack.py
