@@ -15,10 +15,7 @@ class ExtoPostfix:
 		self._oprtStack = Stack()
 
 	def __str__(self):
-		print "'[",
-		for elem in self._postfix:
-				print elem,',',
-		print "]'"
+		return ','.join(self._postfix)
 
 	def postfix(self,expr):
 		expr = expr.split()
@@ -26,19 +23,19 @@ class ExtoPostfix:
 		ch = expr.pop(0)
 		while self._oprtStack.isEmpty()==False and ch != '#':
 				if ch.isdigit():
-						oprd = float(ch)
-						self._postfix.append(oprd)
+						self._postfix.append(ch)
+						ch = expr.pop(0)
 				else:
 						ch1 = self._oprtStack.peek()
 						if self._isp[ch1] < self._icp[ch]:
 								self._oprtStack.push(ch)
 								ch = expr.pop(0)
-						elif self._isp(ch1) > self._icp(ch):
+						elif self._isp[ch1] > self._icp[ch]:
 								out = self._oprtStack.pop()
 								self._postfix.append(out)
 						else:
 								out = self._oprtStack.pop()
-								if out == '(':	ch = expr.pop(0)
+
 
 if __name__ == "__main__":
 		ex = ExtoPostfix()
