@@ -8,6 +8,7 @@ __author__ = "streethacker"
 #Listing 7.x
 
 from lliststack import Stack
+from extopostfix import ExtoPostfix
 import sys
 
 __metaclass__ = type
@@ -21,7 +22,7 @@ class Calculator:
 		self._stack = Stack()	#_stack is a stack, whick is a main structure in the processing.
 		
 		#split the expr string into a list, which turn operands into floats and remain the operators		 #as string.
-		for elem in expr.split():
+		for elem in expr:
 				if elem not in ['+','-','*','/']:
 						self._expr.append(float(elem))
 				else:
@@ -89,7 +90,11 @@ class Calculator:
 		print "The result of the arithmetic is:%.2f" % self._calResult()
 
 if __name__ == "__main__":
-		expr = "8 2 3 + * 4 /"
+		expr = raw_input("please input the expression:")
+
+		ex_parser = ExtoPostfix()
+
+		expr = ex_parser.backExpr(expr)
 		
 		parser = Calculator(expr)
 

@@ -54,3 +54,6 @@ Here is the records:
 
 	CHAPTER 7: Stacks
 	Listing 7.x: postfixCal.py
+
+	CHAPTER 7: Stacks
+	Listing 7.x: extopostfix.py
