@@ -7,7 +7,7 @@ This is the readme file for Calculator Project
   		a)lliststack.py: linked-list implementation of Stack ADT
 		b)extopostfix.py: receive an input infix expression and change it into a postfix expression.
 		c)postfix.py: receive a postfix expression and calculate the result, then return it back.(the postfix expression is always
-		comes from the result of the extopostfix.py)
+comes from the result of the extopostfix.py)
 	
 	iv.how to use the calculator?
 		run "python postfix.py" then input a infix expression then press enter.
