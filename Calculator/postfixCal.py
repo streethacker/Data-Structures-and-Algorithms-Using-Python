@@ -64,11 +64,11 @@ class Calculator:
 								sys.exit()
 						except ZeroDivisionError as DivErr: #used for division operators, zero can not be used as an divident.
 								print "Zero can not used as an divident."
-								print "Error Message:", DivErr.message if AssErr.message else "None"
+								print "Error Message:", DivErr.message if DivErr.message else "None"
 								sys.exit()
 						except	Exception as ExcErr:	#catch the unexpected exceptions.
 								print "Unknown Error."
-								print "Error Message", ExcErr.message if AssErr.message else "None"
+								print "Error Message", ExcErr.message if ExcErr.message else "None"
 								sys.exit()
 
 		try:
