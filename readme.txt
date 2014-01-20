@@ -7,7 +7,7 @@ Here is the records:
 	Listing 1.3/1.4: linearbag.py
 
 	CHAPTER 2: Arrays
-	Listing 2.1: array.py
+	Listing 2.1: array1d.py
 
 
 	CHAPTER 2: Arrays
