@@ -58,5 +58,11 @@ Here is the records:
 	CHAPTER 7: Stacks
 	Listing 7.x: extopostfix.py
 
+	CHAPTER 8: Queues
+	Listing 8.1: pylistqueue.py
+
+	CHAPTER 8: Queues
+	Listing 8.2: arrayqueue.py
+
 	CHAPTER 13: Binary Trees
 	Listing 13.x: exptree.py
