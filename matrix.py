@@ -44,9 +44,14 @@ class Matrix:
 		each element, whereas a scale factor greater than 1 increa
 		-se the value of each element.
 		"""
-		for r in range(self.numRows):
-				for c in range(self.numCols):
+		for r in range(self.numRows()):
+				for c in range(self.numCols()):
 						self[r, c] += scalar
+
+	def multiplyBy(self, scalar):
+		for r in range(self.numRows()):
+				for c in range(self.numCols()):
+						self[r, c] *= scalar
 						
 						
 	def transpose(self):
@@ -138,6 +143,24 @@ class Matrix:
 
 		return newMatrix
 
+	def __mod__(self, num):
+		assert int(num) == num, "The value num must be an integer."
+		for r in range(self.numRows()):
+				for c in range(self.numCols()):
+						self[r, c] %= num
+
+	def inverseSpecialMatrix(self):
+		assert self.numRows() == self.numCols() and self.numRows() == 2 and \
+			self[0, 0]*self[1, 1] - self[0, 1] * self[1, 0] != 0,\
+			"This function is only designed for 2*2 matrices which meet the conditions: ab - cd != 0"
+
+		scalar = 1 / float((self[0, 0]*self[1, 1] - self[0, 1]*self[1, 0]))
+
+		self[0, 1] *= -1
+		self[1, 0] *= -1
+
+		self.multiplyBy(scalar)
+
 	def printMatrix(self):
 		for r in range(self.numRows()):
 				for c in range(self.numCols()):
@@ -146,24 +169,44 @@ class Matrix:
 
 
 if __name__ == "__main__":
-		mtx_a = Matrix(3, 2)
-		mtx_b = Matrix(2, 3)
+		import sys
+		MSG = len(sys.argv) >= 2 and sys.argv[1] or "meet me at the usual place at then rather than eight o'clock"
 
-		mtx_a[0, 0] = 0
-		mtx_a[0, 1] = 1
-		mtx_a[1, 0] = 2
-		mtx_a[1, 1] = 3
-		mtx_a[2, 0] = 4
-		mtx_a[2, 1] = 5
+		DICT_OF_MAP = {k:v for (k, v) in enumerate('abcdefghijklmnopqrstuvwxyz', 0)} #(integer, letter)
+		REVERSE_DICT_OF_MAP = {v:k for (k, v) in enumerate('abcdefghijklmnopqrstuvwxyz', 0)}  #(letter, integer)
+	
+		characters = [REVERSE_DICT_OF_MAP[item] for item in MSG.lower() if ord(item) >= 97 and ord(item) <= 122]
 
-		mtx_b[0, 0] = 6
-		mtx_b[0, 1] = 7
-		mtx_b[0, 2] = 8
-		mtx_b[1, 0] = 9
-		mtx_b[1, 1] = 1
-		mtx_b[1, 2] = 0
+		key_mtx = Matrix(2, 2)
+		key_mtx[0, 0], key_mtx[0, 1] = 9, 4
+		key_mtx[1, 0], key_mtx[1, 1] = 5, 7
+		
+		code = [(characters[i], characters[i+1]) for i in range(len(characters)-1) if i % 2 == 0]
 
-		mtx_res = mtx_a * mtx_b
+		msg_mtx = Matrix(2, 1)
 
-		print "The result Matrix is:"
-		mtx_res.printMatrix()
+		rst_mtx = Matrix(2, 1)
+
+		rst_stack = []
+
+		ascd = 1
+		for k, v in code:
+				msg_mtx[0, 0], msg_mtx[1, 0] = k, v
+				rst_mtx = key_mtx * msg_mtx
+				rst_mtx % 26
+				rst_stack.append(rst_mtx)
+				print "C%s:" % ascd
+				print "+----+"
+				rst_mtx.printMatrix()
+				print "+----+"
+				print 
+				ascd += 1
+
+		print "The final Encrypted message is:"
+		for mtx in rst_stack:
+				for r in range(mtx.numRows()):
+						for c in range(mtx.numCols()):
+								print DICT_OF_MAP[mtx[r, c]],	
+
+		print 
+		print

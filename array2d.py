@@ -1,4 +1,4 @@
-from array import Array
+from array1d import Array
 
 class Array2D:
 	"""
