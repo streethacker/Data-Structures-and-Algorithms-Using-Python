@@ -68,9 +68,9 @@ def selectionSort(theRef):
 
     O(n^2) in the worst case, still.
     """
-    max = len(theRef) - 1
+    max = len(theRef)
 
-    for i in range(max - 1):
+    for i in range(max):
         smallIdx = i
         for j in range(i + 1, len(theRef)):
             if theRef[j] < theRef[smallIdx]:
